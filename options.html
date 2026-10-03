@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>TL;DR Crawler - Options</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { margin: 0; background: #0f1115; color: #d7dae0; font: 14px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 520px; margin: 48px auto; padding: 0 20px; }
+    h1 { font: 700 18px ui-monospace, Menlo, Consolas, monospace; letter-spacing: .14em; color: #ffd166; margin: 0 0 6px; }
+    p.sub { color: #8d929b; margin: 0 0 28px; }
+    label { display: block; margin: 18px 0 6px; color: #aeb3bc; font-size: 13px; }
+    input { width: 100%; box-sizing: border-box; padding: 10px 12px; background: #16181c; color: #e6e8ec; border: 1px solid #2b2f36; border-radius: 8px; font: 13px ui-monospace, Menlo, Consolas, monospace; }
+    input:focus { outline: none; border-color: #5ab8ff; }
+    .row { display: flex; gap: 10px; align-items: center; margin-top: 22px; }
+    button { padding: 9px 16px; border-radius: 8px; border: 1px solid #ffd166; background: #1d2026; color: #ffd166; font: 13px system-ui; cursor: pointer; }
+    button.ghost { border-color: #333842; color: #aeb3bc; }
+    button:hover { background: #262a32; }
+    #status { color: #5ab8ff; font-size: 13px; min-height: 1em; }
+    .hint { margin-top: 28px; color: #6b707a; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>TL;DR CRAWLER</h1>
+    <p class="sub">Optional. Without a key the crawler uses simple built-in summaries.</p>
+
+    <label for="apiKey">Anthropic API key</label>
+    <input id="apiKey" type="password" placeholder="sk-ant-..." autocomplete="off" spellcheck="false">
+
+    <label for="model">Model name</label>
+    <input id="model" type="text" list="models" placeholder="claude-haiku-4-5-20251001" spellcheck="false">
+    <datalist id="models">
+      <option value="claude-haiku-4-5-20251001"></option>
+      <option value="claude-sonnet-5-5"></option>
+      <option value="claude-opus-5-5"></option>
+    </datalist>
+
+    <div class="row">
+      <button id="save">Save</button>
+      <button id="clear" class="ghost">Remove key</button>
+      <span id="status"></span>
+    </div>
+
+    <p class="hint">The key is stored only in chrome.storage.local on this browser and is sent only to api.anthropic.com, from the extension's background script.</p>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

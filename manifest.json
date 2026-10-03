@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "TL;DR Crawler",
+  "version": "1.0.0",
+  "description": "A line-drawn spider follows your cursor, crawls the text and builds a live TL;DR of the page.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": ["https://api.anthropic.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "TL;DR Crawler",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
